@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #01142a;
+  --color-navy-deep: #040f1e;
+  --color-gold: #c19758;
+  --color-gold-light: #d4b483;
+  /* Deeper gold for text on light (ivory/white) backgrounds — --color-gold
+     fails WCAG AA contrast there (~2.5:1); this passes at ~5.4:1. */
+  --color-gold-deep: #7d5f2e;
+  --color-ivory: #faf5ef;
+  --color-white: #ffffff;
+  --color-ink: #1d222a;
+  --color-muted: #5c5c5c;
+  --color-rule: #8f95a3;
+
+  --font-display: var(--font-playfair);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background: var(--color-ivory);
+  color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
