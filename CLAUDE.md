@@ -2,10 +2,12 @@
 
 ## Purpose
 
-Static, presentation-quality V1 website for a financial consultancy client
-("Ledger & Beyond Consultancy"). This is a visual prototype for client
-review — no backend, auth, database, CMS, payments, or booking system.
-Architecture stays clean enough to add those later without a rewrite.
+Static, presentation-quality website for a financial consultancy client
+("Ledger & Beyond Consultancy"), now carrying verified production content
+(see `docs/CONTENT_SOURCE.md`) — no backend, auth, database, CMS,
+payments, or booking system. Architecture stays clean enough to add those
+later without a rewrite. Canonical production domain:
+`https://ledgerbeyond.com`.
 
 ## Stack
 
@@ -13,7 +15,8 @@ Next.js (App Router) · React · TypeScript · Tailwind CSS · static-first
 rendering (no `output: "export"` unless deployment specifically requires
 it — see `references/` decisions). Deploy target: Vercel (not connected
 yet). No state library, no ORM, no CMS, no animation library unless a
-specific need arises — see `TOKEN_USAGE.md` for the fuller discipline list.
+specific need arises — see `docs/TOKEN_USAGE.md` for the fuller discipline
+list.
 
 ## Visual identity
 
@@ -29,11 +32,16 @@ Reference: `references/website-reference.jpeg`. Logo: `public/brand/`.
 ## Content integrity — no fabricated facts
 
 Never invent founder credentials, years of experience, client counts,
-office locations, awards, or regulatory claims. Unknown facts are `TODO`
-in `src/content/site.ts`, not filled with plausible-sounding text. The
-supplied reference image contains example content (name, credentials,
-timeline, city list) — treat it as a *layout/visual* reference only; none
-of that content is confirmed and none of it ships without confirmation.
+office locations, awards, or regulatory claims. `src/content/site.ts` is
+the single typed source for all copy; `docs/CONTENT_SOURCE.md` is what it
+was verified against. Anything not in either is unconfirmed and stays
+`null`/omitted, never filled with plausible-sounding text. The supplied
+reference image (`references/website-reference.jpeg`) is a *layout/visual*
+reference only — its example content (names, timelines, city lists) was
+never real and must never resurface. No founder photograph, ever; use the
+brand mark (`public/brand/`) in its place. No dash characters (em dash, en
+dash, double hyphen, or plain hyphen) in visible marketing copy — restate
+with commas, periods, or colons instead.
 
 ## Architecture rules
 
@@ -59,8 +67,11 @@ third-party form provider — until explicitly requested.
   build` must pass, and the change must actually be viewed on localhost
   (compiling is not the same as working).
 
-See `TOKEN_USAGE.md` for context-efficiency policy and `PROJECT_BRIEF.md`
-for the V1 scope and open TODOs.
+See `docs/TOKEN_USAGE.md` for context-efficiency policy, `docs/CONTENT_SOURCE.md`
+for verified copy, and `docs/DECISIONS.md` for the reasoning behind
+technical choices made during the final content-integration pass.
+`PROJECT_BRIEF.md` is the historical V1-prototype scope record; treat its
+"unconfirmed" TODO list as superseded by `docs/CONTENT_SOURCE.md`.
 
 <!-- BEGIN:nextjs-agent-rules -->
 

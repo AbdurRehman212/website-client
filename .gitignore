@@ -44,3 +44,7 @@ next-env.d.ts
 /.agents/
 /.claude/
 
+# raw client-supplied source material (docx, duplicate logo exports) —
+# already integrated into src/content/site.ts and public/brand/
+/project data/
+

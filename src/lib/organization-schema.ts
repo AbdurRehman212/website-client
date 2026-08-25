@@ -1,8 +1,9 @@
-import { company, seo } from "@/content/site";
+import { company, contact, seo } from "@/content/site";
 
 /**
- * Only fields we can state as fact. No address, phone, or founding date —
- * those are unconfirmed (see PROJECT_BRIEF.md) and stay out until real.
+ * Only fields we can state as fact. No street address, no founding date
+ * (unconfirmed) — those stay out until real. No sameAs until real social
+ * accounts exist.
  */
 export function organizationSchema() {
   return {
@@ -10,6 +11,8 @@ export function organizationSchema() {
     "@type": "Organization",
     name: company.name,
     ...(seo.siteUrl ? { url: seo.siteUrl } : {}),
-    logo: "/brand/logo-horizontal.png",
+    email: contact.email,
+    telephone: contact.phoneHref.replace("tel:", ""),
+    logo: seo.siteUrl ? `${seo.siteUrl}/brand/logo-horizontal.png` : "/brand/logo-horizontal.png",
   };
 }

@@ -19,29 +19,23 @@ auth, database, CMS, payments, or booking system in V1.
 `/`, `/about`, `/services`, `/contact`. No Blog in V1; architecture leaves
 room to add one later.
 
-## Explicitly unconfirmed — do not present as fact
+## Superseded — see docs/CONTENT_SOURCE.md
 
-The reference image contains example content that reads as real but is
-**not** confirmed by the client and must not ship as-is:
+As of 2026-08-25, the client supplied verified copy (founder identity,
+services, values, contact details, production domain) and it has been
+integrated into `src/content/site.ts`. The list that used to live here —
+founder name/credentials, service copy, contact details, production
+domain — is now confirmed; treat `docs/CONTENT_SOURCE.md` as current and
+this section as a historical record of what was still open at V1.
 
-- TODO — Founder name, title, credentials, biography, headshot (reference
-  shows "Yusra" / "CA (PAK) | ACCA" — treat as placeholder unless the
-  client confirms it)
-- TODO — Founding year / company timeline (reference shows 2014–2025
-  milestones)
-- TODO — Office locations (reference shows Dubai / London / Toronto /
-  Sydney — brief explicitly says not to reproduce this without confirmation)
-- TODO — Phone number, email address, physical address
-- TODO — Social links
-- TODO — Final service copy (V1 uses brief, generic descriptions for the
-  four service categories: Bookkeeping, Financial Reporting, Budgeting &
-  Forecasting, Tax & Advisory)
-- TODO — Any credentials, regulatory approvals, client counts, awards,
-  testimonials, or partner logos
-- TODO — Final production domain (for canonical URL / Open Graph)
-- TODO — Open Graph share image (no fake social graphic has been created)
-- TODO — Contact form delivery mechanism (currently prototype-only, no
-  submissions are actually sent anywhere)
+Still genuinely unconfirmed / out of scope, do not fabricate:
+
+- Founding year / company timeline
+- Physical office address
+- Social media accounts (site intentionally omits the social section)
+- Open Graph share image (no fake social graphic has been created)
+- Contact form delivery mechanism (V1 uses direct `tel:`/`wa.me`/`mailto:`
+  links instead of a form, by design — see `docs/DECISIONS.md`)
 
 ## Deferred to V2 (by design, not oversight)
 

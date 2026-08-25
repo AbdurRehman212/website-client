@@ -1,6 +1,10 @@
 import Link from "next/link";
 import Container from "@/components/ui/Container";
-import { company, nav, services, contact, social, bookConsultationHref } from "@/content/site";
+import { company, nav, services, contact, bookConsultationHref } from "@/content/site";
+import { MailIcon, PhoneIcon, WhatsAppIcon } from "@/components/ui/icons";
+
+const linkClass =
+  "transition-colors hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -20,13 +24,13 @@ export default function Footer() {
           <ul className="flex flex-col gap-2">
             {nav.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="transition-colors hover:text-gold">
+                <Link href={link.href} className={linkClass}>
                   {link.label}
                 </Link>
               </li>
             ))}
             <li>
-              <Link href={bookConsultationHref} className="transition-colors hover:text-gold">
+              <Link href={bookConsultationHref} className={linkClass}>
                 Book a Consultation
               </Link>
             </li>
@@ -40,7 +44,7 @@ export default function Footer() {
           <ul className="flex flex-col gap-2">
             {services.map((service) => (
               <li key={service.slug}>
-                <Link href="/services" className="transition-colors hover:text-gold">
+                <Link href="/services" className={linkClass}>
                   {service.title}
                 </Link>
               </li>
@@ -52,35 +56,46 @@ export default function Footer() {
           <span className="text-xs font-semibold uppercase tracking-[0.15em] text-ivory/50">
             Get in Touch
           </span>
-          {contact.email || contact.phone || contact.address ? (
-            <ul className="flex flex-col gap-2">
-              {contact.email ? <li>{contact.email}</li> : null}
-              {contact.phone ? <li>{contact.phone}</li> : null}
-              {contact.address ? <li>{contact.address}</li> : null}
-            </ul>
-          ) : (
-            <p className="text-ivory/50">Contact details — to be confirmed.</p>
-          )}
-          {social.length > 0 ? (
-            <ul className="mt-2 flex gap-4">
-              {social.map((item) => (
-                <li key={item.href}>
-                  <a href={item.href} className="transition-colors hover:text-gold">
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          ) : null}
+          <ul className="flex flex-col gap-2">
+            <li>
+              <a
+                href={contact.phoneHref}
+                aria-label={`Call Ledger & Beyond at ${contact.phone}`}
+                className={`flex items-center gap-2 ${linkClass}`}
+              >
+                <PhoneIcon className="h-4 w-4" />
+                {contact.phone}
+              </a>
+            </li>
+            <li>
+              <a
+                href={contact.whatsappHref}
+                aria-label="Contact Ledger & Beyond on WhatsApp"
+                className={`flex items-center gap-2 ${linkClass}`}
+              >
+                <WhatsAppIcon className="h-4 w-4" />
+                {contact.whatsapp}
+              </a>
+            </li>
+            <li>
+              <a
+                href={`mailto:${contact.email}`}
+                aria-label={`Email Ledger & Beyond at ${contact.email}`}
+                className={`flex items-center gap-2 ${linkClass}`}
+              >
+                <MailIcon className="h-4 w-4" />
+                {contact.email}
+              </a>
+            </li>
+          </ul>
         </div>
       </Container>
 
       <div className="border-t border-ivory/10">
-        <Container className="flex flex-col gap-2 py-6 text-xs text-ivory/50 sm:flex-row sm:items-center sm:justify-between">
+        <Container className="py-6 text-xs text-ivory/50">
           <p>
             &copy; {year} {company.name}. All rights reserved.
           </p>
-          <p>Prototype build — not yet in production.</p>
         </Container>
       </div>
     </footer>

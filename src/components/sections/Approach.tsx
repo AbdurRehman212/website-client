@@ -1,6 +1,6 @@
 import Container from "@/components/ui/Container";
 import CTAButton from "@/components/ui/CTAButton";
-import { approach } from "@/content/site";
+import { approach, approachSection } from "@/content/site";
 
 export default function Approach() {
   return (
@@ -8,16 +8,14 @@ export default function Approach() {
       <Container className="grid gap-12 lg:grid-cols-2 lg:items-start">
         <div className="flex flex-col gap-6">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
-            Our Approach
+            {approachSection.eyebrow}
           </span>
           <h2 className="font-display text-3xl leading-tight text-ivory sm:text-4xl">
-            More Than Numbers.
-            <br />A Partnership You Can Rely On.
+            {approachSection.headingLines[0]}
+            <br />
+            {approachSection.headingLines[1]}
           </h2>
-          <p className="max-w-md text-base leading-relaxed text-ivory/70">
-            We go beyond compliance to become a genuine partner — bringing
-            insight and strategy to every stage of the relationship.
-          </p>
+          <p className="max-w-md text-base leading-relaxed text-ivory/70">{approachSection.body}</p>
           <CTAButton href="/about" variant="outline" className="w-fit">
             Our Approach
           </CTAButton>

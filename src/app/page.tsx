@@ -8,7 +8,8 @@ import FinalCTA from "@/components/sections/FinalCTA";
 export const metadata: Metadata = {
   title: "Financial Clarity & Strategy",
   description:
-    "Ledger & Beyond Consultancy helps ambitious businesses build clarity in their numbers and a strategy for what comes next.",
+    "Ledger & Beyond Consultancy helps ambitious businesses see beyond the numbers, shape what's next and grow with confidence.",
+  alternates: { canonical: "/" },
 };
 
 export default function HomePage() {

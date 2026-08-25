@@ -1,15 +1,16 @@
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { services } from "@/content/site";
+import { services, whatWeDo } from "@/content/site";
 
 export default function ServicesPreview() {
   return (
     <section className="bg-ivory py-20">
       <Container className="flex flex-col gap-12">
         <SectionHeading
-          eyebrow="What We Do"
-          title="How We Can Help"
+          eyebrow={whatWeDo.eyebrow}
+          title={whatWeDo.heading}
+          description={whatWeDo.body}
           align="center"
         />
 

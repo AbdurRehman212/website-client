@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     template: seo.defaultTitleTemplate,
   },
   description: seo.defaultDescription,
+  alternates: { canonical: "/" },
   openGraph: {
     title: company.name,
     description: seo.defaultDescription,
