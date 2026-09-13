@@ -11,8 +11,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-navy text-ivory/80">
-      <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
-        <div className="flex flex-col gap-3 lg:col-span-2">
+      <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.3fr_.7fr_1fr_1fr]">
+        <div className="flex flex-col gap-3">
           <span className="font-display text-2xl text-ivory">{company.shortName}</span>
           <p className="max-w-xs text-sm leading-relaxed">{company.tagline}</p>
         </div>
@@ -44,7 +44,7 @@ export default function Footer() {
           <ul className="flex flex-col gap-2">
             {services.map((service) => (
               <li key={service.slug}>
-                <Link href="/services" className={linkClass}>
+                <Link href={`/services#${service.slug}`} className={linkClass}>
                   {service.title}
                 </Link>
               </li>

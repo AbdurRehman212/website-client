@@ -65,7 +65,7 @@ export default function MobileMenu() {
         aria-controls={panelId}
         aria-label={open ? "Close menu" : "Open menu"}
         onClick={() => setOpen((v) => !v)}
-        className="relative z-50 flex h-10 w-10 items-center justify-center rounded-sm text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep"
+        className="relative z-50 flex h-11 w-11 items-center justify-center rounded-sm text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep"
       >
         <svg
           viewBox="0 0 24 24"
@@ -90,7 +90,7 @@ export default function MobileMenu() {
           role="dialog"
           aria-modal="true"
           aria-label="Mobile navigation"
-          className="fixed inset-0 z-40 flex flex-col bg-navy px-6 pt-28 pb-8"
+          className="fixed inset-0 z-40 flex flex-col overscroll-contain bg-navy px-6 pt-28 pb-[max(2rem,env(safe-area-inset-bottom))]"
         >
           <nav aria-label="Mobile" className="flex flex-col">
             <NavLinks

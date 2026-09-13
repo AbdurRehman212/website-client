@@ -1,54 +1,29 @@
 # Content Source of Truth
 
-Verified client copy, provided 2026-08-25 via `project data/WEBSITE CONTENT.docx`
-and the final integration brief. This document is the reference for what
-is *confirmed*; `src/content/site.ts` is the typed implementation of it.
-Do not re-derive copy from the old `references/website-reference.jpeg` —
-that file is layout/visual reference only, its text is prototype content.
+Primary source: `project data/WEBSITE CONTENT (1).docx`, supplemented by the final integration brief supplied on 2026-09-13. The earlier `WEBSITE CONTENT.docx` and `references/website-reference.jpeg` contain superseded prototype content.
 
-## Company
+## Verified facts
 
-- Name: Ledger & Beyond Consultancy
-- Tagline (from logo): Accurate Today. Strategic Tomorrow.
-- Canonical domain: https://ledgerbeyond.com
-
-## Founder
-
-- Yusra Ayaz — Founder | Chartered Accountant (ICAEW UK)
-- 11 years of experience across accounting, finance and taxation.
-- No photograph is used anywhere on the site (client instruction). The
-  founder-image areas use the Ledger & Beyond brand mark instead.
-- No additional credentials, memberships, or biography details exist
-  beyond the four bio paragraphs in `src/content/site.ts` — do not extend.
-
-## Contact
-
-- Phone / WhatsApp: 0323 2007005 (`tel:+923232007005`, `wa.me/923232007005`)
+- Company: Ledger & Beyond Consultancy
+- Brand tagline: Accurate Today. Strategic Tomorrow.
+- Founder: Yusra Ayaz
+- Founder title: Founder | Chartered Accountant | ICAEW, UK
+- Founder experience: 12+ years, centralised in `founderExperience`
+- Phone and WhatsApp: 0323 2007005
 - Email: info@ledgerbeyond.com
-- No physical address, no social media accounts — omit both, don't stub them.
+- Canonical domain: https://ledgerbeyond.com
+- No approved founder photograph, address, testimonials, reviews, social accounts or client statistics are supplied.
 
 ## Services
 
-Four primary services (Bookkeeping, Financial Reporting, Budgeting &
-Forecasting, Tax & Advisory) plus one add-on (Finance & Business Process
-Setup, presented as a distinct, unnumbered offering — not a 5th primary
-service). Full copy lives in `src/content/site.ts` (`services`,
-`addOnService`).
+Five substantive services: Bookkeeping; Financial Reporting; Budgeting & Forecasting; Tax & Advisory; Finance & Business Process Setup. Detailed scope, outcomes and calls to action live in `src/content/site.ts`.
 
-## Values
+## Purpose and inclusion
 
-Exactly four: Integrity, Excellence, Confidentiality, Collaboration.
-Confidentiality replaced the old prototype's "Empowerment" — if this
-regresses anywhere, it's a bug.
+The About page retains the approved focus on accessible financial guidance, women-led businesses, women entrepreneurs, mothers and single mothers, financial independence, flexible professional work, mentorship and opportunities for women in finance.
 
-## Copy style rules (permanent)
+## Asset use
 
-- No em dash, en dash, or double hyphen in visible marketing copy. Ordinary
-  hyphens are also avoided in visible copy; restructure with commas,
-  periods, or colons instead. (Code comments and CSS custom-property names
-  are not "visible marketing copy" — leave those alone.)
-- No formulaic AI phrasing ("Whether you are...", "Unlock...", "Seamlessly...",
-  "Navigate the complexities...", etc).
-- Do not invent founder credentials, client counts, office locations,
-  awards, testimonials, or regulatory claims. If it's not in this file or
-  `site.ts`, treat it as unconfirmed.
+The three approved logo files in `project data` are already mapped to `public/brand`. The new WhatsApp screenshot is an information hierarchy reference only. Its green/peach palette and portrait are not brand assets.
+
+The supplied voice note was identified but could not be transcribed with available local tools. The final Word document and written integration brief remain the implemented sources.

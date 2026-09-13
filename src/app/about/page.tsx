@@ -1,33 +1,29 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/sections/PageHero";
-import CompanyIntro from "@/components/sections/CompanyIntro";
 import FounderProfile from "@/components/sections/FounderProfile";
-import ValuesGrid from "@/components/sections/ValuesGrid";
-import Approach from "@/components/sections/Approach";
+import PurposeMission from "@/components/sections/PurposeMission";
 import FinalCTA from "@/components/sections/FinalCTA";
 
 const description =
-  "Learn about Ledger & Beyond Consultancy, the values that guide our work, and the approach we bring to every client relationship.";
+  "Meet Yusra Ayaz and learn how Ledger & Beyond Consultancy combines chartered accounting expertise with practical, purpose-led support.";
 
 export const metadata: Metadata = {
   title: "About",
   description,
   alternates: { canonical: "/about" },
-  openGraph: { title: "About | Ledger & Beyond", description },
+  openGraph: { title: "About | Ledger & Beyond", description, url: "/about", siteName: "Ledger & Beyond", type: "website" },
 };
 
 export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About Us"
-        title="Led by Expertise. Built with Perspective."
-        description="Ledger & Beyond Consultancy was founded on the belief that every business deserves financial clarity, strategic insight and a partner who genuinely understands its goals."
+        eyebrow="About Ledger & Beyond Consultancy"
+        title="Led by Expertise. Built with Purpose."
+        description="Professional expertise, practical financial guidance and a commitment to creating value that lasts."
       />
-      <CompanyIntro />
       <FounderProfile />
-      <ValuesGrid />
-      <Approach />
+      <PurposeMission />
       <FinalCTA />
     </>
   );

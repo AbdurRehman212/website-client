@@ -1,241 +1,161 @@
-/**
- * Central, typed content source. Every value below is verified client
- * copy — see docs/CONTENT_SOURCE.md for provenance. Unconfirmed facts stay
- * `null`, never a plausible-sounding guess.
- */
+/** Central, typed source for all verified business content. */
 
-export type Maybe<T> = T | null;
-
-export interface NavLink {
-  label: string;
-  href: string;
-}
-
+export interface NavLink { label: string; href: string }
 export interface ServiceContent {
-  slug: string;
-  number: string;
-  title: string;
-  shortDescription: string;
-  bullets: string[];
-}
-
-export interface AddOnServiceContent {
-  title: string;
-  description: string;
-  bullets: string[];
-}
-
-export interface ValueContent {
-  title: string;
-  description: string;
-}
-
-export interface ApproachItem {
-  title: string;
-  description: string;
-}
-
-export interface FounderContent {
-  name: Maybe<string>;
-  title: Maybe<string>;
-  bio: Maybe<string[]>;
-  quote: Maybe<string>;
-  photo: Maybe<string>;
+  slug: string; number: string; title: string; headline: string;
+  shortDescription: string; introduction: string; bullets: string[];
+  outcome: string; cta: string;
 }
 
 export const company = {
   name: "Ledger & Beyond Consultancy",
   shortName: "Ledger & Beyond",
   tagline: "Accurate Today. Strategic Tomorrow.",
-  description:
-    "Ledger & Beyond Consultancy provides accounting and financial advisory services that bring structure to your finances and perspective to your business decisions.",
+  description: "Accounting and financial advisory services that bring structure to your finances and perspective to your business decisions.",
 };
 
 export const nav: NavLink[] = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Contact", href: "/contact" },
+  { label: "Home", href: "/" }, { label: "About", href: "/about" },
+  { label: "Services", href: "/services" }, { label: "Contact", href: "/contact" },
 ];
-
 export const bookConsultationHref = "/contact";
 
 export const hero = {
-  eyebrow: "Welcome to Ledger & Beyond",
+  eyebrow: "Financial clarity for businesses ready to grow",
   headingLines: ["Beyond the Books.", "Shaping Strategy.", "Driving Growth."],
-  subtext:
-    "We help ambitious businesses see beyond the numbers, shape what's next and grow with confidence.",
+  subtext: "Bookkeeping, reporting, budgets, forecasts and stronger finance processes that help growing businesses build sound foundations and make better informed decisions.",
 };
 
-export const whatWeDo = {
-  eyebrow: "What We Do",
-  heading: "Financial Expertise. Business Perspective.",
-  body: "From keeping your accounts in order to helping you plan what comes next, we bring structure, insight and financial perspective to the decisions that move your business.",
+export const businessProblems = {
+  heading: "Your business is growing. Is your finance function keeping up?",
+  body: "Growth brings more transactions, reporting demands and pressure on cash flow. When information arrives late, confident decisions become harder.",
+  cta: "Let's identify what your business needs",
+  items: [
+    { title: "Unclear financial performance", description: "Reports do not clearly show what is driving revenue, costs or profitability." },
+    { title: "Time consuming accounting processes", description: "Reconciliations and month end tasks take time away from running your business." },
+    { title: "Limited financial visibility", description: "You need better insight into cash flow, budgets and future requirements." },
+    { title: "Finance processes that are not scaling", description: "Systems, controls and reporting have not kept pace with growth." },
+  ],
 };
 
-export const approachSection = {
-  eyebrow: "Our Approach",
-  headingLines: ["More Than Numbers.", "A Partnership You Can Rely On."],
-  body: "We go beyond compliance, combining financial expertise with commercial insight to support better decisions and sustainable growth.",
+export const solutions = {
+  heading: "More than accounting. A clearer view of your business.",
+  body: "Accurate records are the foundation. We help you understand performance, strengthen finance processes and plan what comes next.",
+  cta: "Explore How We Can Help",
+  items: [
+    { title: "Know Your Numbers", description: "Reliable records and meaningful reporting give you a clear view of financial performance." },
+    { title: "Strengthen Your Finance Function", description: "Practical processes and controls create a more organised, dependable way of working." },
+    { title: "Plan With Confidence", description: "Budgets, forecasts and commercial insight support better informed decisions and sustainable growth." },
+  ],
 };
 
-export const approach: ApproachItem[] = [
-  {
-    title: "Tailored Solutions",
-    description: "Every business is different. Our approach is shaped around your needs, priorities and objectives.",
-  },
-  {
-    title: "Strategic Insight",
-    description: "We turn financial data into actionable insight, highlighting performance, risks and opportunities.",
-  },
-  {
-    title: "Trust & Transparency",
-    description: "Clear advice. Sound judgement. No unnecessary complexity.",
-  },
-  {
-    title: "Long Term Partnership",
-    description: "We provide consistent financial support as your business evolves, scales and moves forward.",
-  },
-];
-
-export const about = {
-  whoWeAre: {
-    eyebrow: "Who We Are",
-    heading: "A Partner in the Numbers and What Comes Next",
-    body: company.description,
-  },
-  founderSection: {
-    eyebrow: "Founder",
-    heading: "Built on Experience. Driven by Relationships.",
-  },
+export const servicesIntro = {
+  heading: "The right support, from accurate records to forward planning.",
+  body: "Five connected services, shaped around the needs and priorities of your business.",
 };
 
 export const services: ServiceContent[] = [
   {
-    slug: "bookkeeping",
-    number: "01",
-    title: "Bookkeeping",
-    shortDescription: "Accurate, organised financial records, the foundation of sound financial management.",
-    bullets: [
-      "Transaction recording & categorisation",
-      "Bank & card reconciliations",
-      "Accounts payable & receivable",
-      "Month end bookkeeping & closing",
-      "Account clean up & catch up bookkeeping",
-      "Monthly financial reporting",
-      "General ledger maintenance",
-    ],
+    slug: "bookkeeping", number: "01", title: "Bookkeeping",
+    headline: "Reliable Bookkeeping. Clearer Financial Records.",
+    shortDescription: "Accurate, organised records that give your business a dependable financial foundation.",
+    introduction: "We keep day to day financial records complete, reconciled and ready to support reporting and decision making.",
+    bullets: ["Monthly bookkeeping", "Transaction recording and categorisation", "Bank and credit card reconciliations", "Accounts payable and accounts receivable", "General ledger maintenance", "Month end bookkeeping support", "Historical bookkeeping clean up"],
+    outcome: "More reliable records. Less administrative pressure. Better financial visibility.",
+    cta: "Discuss Your Bookkeeping Needs",
   },
   {
-    slug: "financial-reporting",
-    number: "02",
-    title: "Financial Reporting",
-    shortDescription:
-      "Structured, reliable reporting that gives management a clear view of financial performance and position.",
-    bullets: [
-      "Financial statement preparation",
-      "Monthly & management reporting",
-      "KPI & performance analysis",
-      "Board & investor reporting",
-      "Financial reporting packs",
-      "Variance & trend analysis",
-    ],
+    slug: "financial-reporting", number: "02", title: "Financial Reporting",
+    headline: "Financial Reports That Help You Make Better Decisions.",
+    shortDescription: "Structured reporting that turns financial information into a clear view of performance.",
+    introduction: "We prepare reliable reports and analysis that help management understand what drives results and what requires attention.",
+    bullets: ["Monthly and periodic management accounts", "Profit and loss reporting", "Balance sheet reporting", "Cash flow reporting", "Account reconciliations", "Variance analysis", "Revenue and cost analysis", "Management reporting packs", "Financial performance reviews"],
+    outcome: "A clearer understanding of business performance, priorities and emerging risks.",
+    cta: "Improve Your Financial Reporting",
   },
   {
-    slug: "budgeting-forecasting",
-    number: "03",
-    title: "Budgeting & Forecasting",
-    shortDescription:
-      "Practical budgets and forward looking forecasts to support financial planning and resource allocation.",
-    bullets: [
-      "Budget preparation & planning",
-      "Cash flow forecasting",
-      "Scenario & sensitivity analysis",
-      "Budget vs. actual variance analysis",
-      "Rolling forecasts",
-      "Financial modelling",
-    ],
+    slug: "budgeting-forecasting", number: "03", title: "Budgeting & Forecasting",
+    headline: "Plan Ahead With Practical Budgets and Forecasts.",
+    shortDescription: "Practical planning tools that improve visibility and support confident decisions.",
+    introduction: "We build and maintain budgets, cash flow forecasts and financial models that reflect how your business actually operates.",
+    bullets: ["Annual budgeting", "Rolling financial forecasts", "Cash flow forecasting", "Revenue and expense projections", "Budget versus actual analysis", "Scenario planning", "Financial modelling", "Forecast updates and management reviews"],
+    outcome: "Better planning, earlier visibility and more informed decisions.",
+    cta: "Discuss Your Budgeting & Forecasting Needs",
   },
   {
-    slug: "tax-advisory",
-    number: "04",
-    title: "Tax & Advisory",
-    shortDescription: "Practical tax and advisory support covering compliance, planning, structuring and financial strategy.",
-    bullets: [
-      "Tax planning & compliance",
-      "Business & financial advisory",
-      "Business structuring",
-      "Financial strategy & planning",
-      "Ongoing advisory support",
-    ],
+    slug: "tax-advisory", number: "04", title: "Tax & Advisory",
+    headline: "Tax Support and Financial Advice With a Commercial Perspective.",
+    shortDescription: "Practical tax related accounting support and financial advice grounded in your business.",
+    introduction: "We bring together tax related financial information, analysis and commercial perspective to support compliance and management decisions.",
+    bullets: ["Tax preparation and tax related working papers", "Financial information required for tax compliance", "Tax related accounting support", "Financial analysis", "Business performance reviews", "Management decision support", "Financial planning assistance"],
+    outcome: "Well prepared financial information and practical advice that supports sound business decisions.",
+    cta: "Discuss Your Tax & Advisory Requirements",
+  },
+  {
+    slug: "finance-process-setup", number: "05", title: "Finance & Business Process Setup",
+    headline: "Build a Finance Function That Supports Your Growth.",
+    shortDescription: "Clearer systems, controls and responsibilities for a finance function that can scale.",
+    introduction: "We design and improve the practical structures that help finance work reliably across your business.",
+    bullets: ["Finance process design", "Accounting system setup and configuration support", "Chart of accounts review", "Month end close procedures", "Financial controls", "Approval workflows", "Finance policies and procedures", "Process mapping", "Accounting workflow improvement", "Reporting and reconciliation processes"],
+    outcome: "A more organised finance function with clearer responsibilities and scalable processes.",
+    cta: "Discuss Your Finance Process Needs",
   },
 ];
 
-export const addOnService: AddOnServiceContent = {
-  title: "Finance & Business Process Setup",
-  description:
-    "Design and implementation of financial controls, processes and operational structures that support efficient, well governed businesses.",
-  bullets: [
-    "Finance process design & implementation",
-    "Internal financial controls",
-    "Accounting system & workflow setup",
-    "Policies & procedures",
-    "Finance & operational process mapping",
-    "Approval & delegation frameworks",
-    "Month end & reporting processes",
+export const founderExperience = { display: "12+ Years", phrase: "over 12 years" };
+export const founder = {
+  name: "Yusra Ayaz", title: "Founder | Chartered Accountant | ICAEW, UK",
+  shortBio: `Yusra brings ${founderExperience.phrase} of experience across accounting, financial reporting, reconciliations, finance operations and business support.`,
+  bio: [
+    "Yusra founded Ledger & Beyond to make financial information clearer and easier for business owners to use. Her work brings structure to finances, strengthens day to day operations and supports informed decisions.",
+    "Her approach is practical and personal. She takes time to understand how a business works, where its finance function needs support and what will create lasting value.",
+    "As a woman and mother building a professional practice, Yusra is also committed to accessible guidance and meaningful opportunities for women, including women-led businesses, mothers and single mothers.",
   ],
+  photo: null as string | null,
 };
 
-export const values: ValueContent[] = [
-  {
-    title: "Integrity",
-    description: "We do the right thing, always, even when it isn't the easy answer.",
-  },
-  {
-    title: "Excellence",
-    description: "We hold our work to the standard we would expect of our own finances.",
-  },
-  {
-    title: "Confidentiality",
-    description: "We treat your financial information with the highest level of discretion and professional care.",
-  },
-  {
-    title: "Collaboration",
-    description: "The strongest results come from genuine partnership, not a transaction.",
-  },
+export const credibility = [
+  { value: founderExperience.display, label: "Accounting & Finance Experience" },
+  { value: "Chartered Accountant", label: "ICAEW, UK" },
+  { value: "Multi Industry Experience", label: "Accounting, Reporting & Financial Management" },
+  { value: "Founder Led Expertise", label: "Direct Professional Involvement" },
 ];
 
-export const founder: FounderContent = {
-  name: "Yusra Ayaz",
-  title: "Founder | Chartered Accountant (ICAEW UK)",
-  bio: [
-    "Hi, I'm Yusra, a Chartered Accountant with 11 years of experience across accounting, finance and taxation. I founded Ledger & Beyond Consultancy with a simple belief: professional relationships should go beyond delivering a service. They should be built on trust, understanding and a genuine commitment to the business.",
-    "Anyone can provide a service. What sets a true financial partner apart is the ability to understand a business, take ownership of its financial needs and grow alongside it. That is the relationship I aim to build with every client.",
-    "As a mother, building something of my own also carries a deeper meaning. I wanted to create a business that reflects both my professional ambition and the example I want to set for my daughter: that building a career and building a life of your own do not have to be separate paths.",
-    "Ledger & Beyond is my way of turning that vision into something lasting: a professional practice built with purpose, strengthened over time and shaped around relationships that go beyond the numbers.",
-  ],
-  quote: null,
-  photo: null,
+export const purposeVisionMission = [
+  { title: "Our Purpose", heading: "Financial clarity made more accessible.", description: "To help businesses understand their finances while building a practice that creates meaningful opportunities for women." },
+  { title: "Our Vision", heading: "Confidence for growing businesses. Opportunity for women.", description: "To support growing businesses, with particular focus on women entrepreneurs, mothers and single mothers, as they build sustainable businesses and financial independence." },
+  { title: "Our Mission", heading: "Accurate, practical and personalised support.", description: "We help businesses understand their numbers, strengthen processes, plan growth and make informed decisions. We also aim to create flexible professional work, mentorship and meaningful opportunities for women in finance." },
+];
+
+export const trustReasons = [
+  { title: "Professional Expertise", description: `Chartered accounting expertise backed by ${founderExperience.phrase} of practical experience.` },
+  { title: "Practical Approach", description: "Clear guidance focused on what your business needs and can use." },
+  { title: "Personal Involvement", description: "Founder led support with direct professional attention." },
+  { title: "Confidentiality", description: "Your financial information is handled with discretion and care." },
+  { title: "Purpose Driven Service", description: "A practice built to create useful work and meaningful long term impact." },
+];
+
+export const process = [
+  { title: "Let's Talk", description: "Start with a conversation." },
+  { title: "Understand", description: "Clarify your priorities." },
+  { title: "Agree", description: "Define the right support." },
+  { title: "Get Started", description: "Put the plan into action." },
+];
+
+export const contact = {
+  email: "info@ledgerbeyond.com", phone: "0323 2007005", phoneHref: "tel:+923232007005",
+  whatsapp: "Chat with us on WhatsApp", whatsappHref: "https://wa.me/923232007005",
+  address: null as string | null,
+  intro: "Tell us where your business stands today and what you would like help with. We will come back to you to arrange a conversation.",
+  trustMessage: "Your information will be treated with professionalism, confidentiality, and care.",
+  nextSteps: ["We review your enquiry.", "We contact you to understand your requirements.", "We arrange a consultation at a convenient time.", "We discuss how Ledger & Beyond can support your business."],
 };
 
 export const finalCta = {
-  heading: "Let's Build Something Meaningful Together",
-  body: "Book a consultation and let's talk through where your business stands today and what comes next.",
+  heading: "Ready to Bring Clarity to Your Finances?",
+  body: "Book a consultation and let's discuss what your business needs next.",
 };
-
-export const contact = {
-  email: "info@ledgerbeyond.com",
-  phone: "0323 2007005",
-  phoneHref: "tel:+923232007005",
-  whatsapp: "0323 2007005",
-  whatsappHref: "https://wa.me/923232007005",
-  address: null as Maybe<string>,
-};
-
-export const social: { label: string; href: string }[] = [];
-
 export const seo = {
-  siteUrl: "https://ledgerbeyond.com" as Maybe<string>,
-  defaultTitleTemplate: `%s | ${company.shortName}`,
+  siteUrl: "https://ledgerbeyond.com", defaultTitleTemplate: `%s | ${company.shortName}`,
   defaultDescription: company.description,
 };

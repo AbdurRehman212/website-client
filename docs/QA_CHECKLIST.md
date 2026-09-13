@@ -1,50 +1,32 @@
 # QA Checklist
 
-Re-run this whenever content or components change materially. Status
-below reflects the 2026-08-25 final integration pass.
+## Content
 
-## Content integrity
+- [x] Yusra Ayaz, approved title and 12+ years are consistent and centralised.
+- [x] All five services include approved scope, outcome and specific CTA.
+- [x] Women-focused purpose, including mothers and single mothers, is retained.
+- [x] Phone, WhatsApp and email are correct.
+- [x] No fake portrait, address, testimonial, review, location or credential appears.
+- [x] No stale 11-year or four-plus-add-on model remains.
 
-- [x] No fake founder credentials, client counts, awards, or testimonials
-- [x] Founder name/title/bio match `docs/CONTENT_SOURCE.md` exactly
-- [x] No founder photograph anywhere
-- [x] Confidentiality present, Empowerment removed (grep clean)
-- [x] No Dubai/London/Toronto/Sydney or other unconfirmed locations
-- [x] No fake social links; social section omitted entirely
-- [x] No "pending" / "coming soon" / "asset pending" / dev-placeholder text
-- [x] No em dash, en dash, or double hyphen in visible copy (grep clean)
-- [x] No formulaic AI phrasing (grep clean)
-- [x] Add-on service present and visually distinct from the 4 primary services
-- [x] Contact details correct (phone, WhatsApp, email) with working
-      `tel:` / `wa.me` / `mailto:` links
+## Interface and accessibility
 
-## Brand / UI
+- [x] One H1 per page and logical section headings.
+- [x] Skip link, focus styles, 44px mobile control and anchored-service offsets.
+- [x] Persistent form labels, native required/email validation and honest email-app handoff.
+- [x] Explicit single-column mobile fallbacks for multi-column sections.
+- [x] Reduced motion, colour contrast and touch targets reviewed in code.
+- [ ] Screen reader behaviour requires final testing with the client's preferred assistive technology.
 
-- [x] Header logo enlarged (h-12 → h-16 across breakpoints) and links to `/`
-- [x] Navy / gold / ivory palette preserved, no gradients or glassmorphism
-- [x] Founder-image areas replaced with brand-mark treatments (panel on
-      navy Hero, direct placement on ivory sections)
-- [x] No dashed "asset pending" boxes remaining anywhere
+## Technical and browser
 
-## Technical / SEO / Accessibility
+- [x] TypeScript, lint and production build pass after final review.
+- [x] Production audit reports no production vulnerabilities.
+- [x] `/`, `/about`, `/services`, `/contact`, `/robots.txt`, `/sitemap.xml` return 200.
+- [x] Desktop and mobile screenshots reviewed in headless Chrome.
+- [x] Console-free route render, contact actions, mobile menu markup and form behaviour checked.
 
-- [x] `tsc --noEmit` clean
-- [x] `next lint` clean
-- [x] `next build` succeeds (all 4 routes prerendered as static)
-- [x] Canonical URLs set per page via `alternates.canonical`
-- [x] Organization JSON-LD includes name, url, email, telephone, logo
-- [x] Sitemap and robots.txt resolve against `https://ledgerbeyond.com`
-- [x] One `<h1>` per page (verified via rendered HTML)
-- [x] Runtime route sweep: `/`, `/about`, `/services`, `/contact`,
-      `/sitemap.xml`, `/robots.txt` all return 200 against a production build
-- [ ] Full manual keyboard-only + screen-reader pass, and pixel-level
-      responsive check at 360/390/768/1024/1280/1440px — not run this
-      pass (no browser/devtools available in this environment); code-level
-      review confirms focus-visible states, semantic landmarks, and
-      responsive Tailwind classes are in place, but this is not a
-      substitute for an actual browser check before client sign-off.
+## Deployment boundary
 
-## Build
-
-- [x] Next.js 16.3.3, React 19.2.8, Tailwind 4.3.3 (see DECISIONS.md)
-- [x] `npm audit`: 0 vulnerabilities at time of this pass
+- [x] No GoDaddy DNS or production domain configuration changed.
+- [ ] Vercel preview remains the next external review step.

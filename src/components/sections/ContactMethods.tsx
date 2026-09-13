@@ -27,13 +27,13 @@ export default function ContactMethods() {
   ];
 
   return (
-    <div className="grid gap-6 sm:grid-cols-3">
+    <div className="grid gap-4">
       {methods.map(({ label, value, href, icon: Icon, accessibleLabel }) => (
         <a
           key={label}
           href={href}
           aria-label={accessibleLabel}
-          className="group flex flex-col gap-4 border border-navy/10 bg-white p-6 transition-colors hover:border-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep"
+          className="group grid min-h-20 grid-cols-[1.5rem_1fr] items-center gap-4 border-t border-navy/15 py-4 transition-colors hover:border-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep"
         >
           <Icon className="h-6 w-6 text-gold-deep" />
           <div>
