@@ -2,12 +2,14 @@ import Image from "next/image";
 import Container from "@/components/ui/Container";
 import CTAButton from "@/components/ui/CTAButton";
 import { credibility, founder } from "@/content/site";
+import Reveal from "@/components/ui/Reveal";
 
 export default function FounderPreview() {
   return (
     <section className="bg-ivory py-16 sm:py-24">
-      <Container className="grid gap-10 md:grid-cols-[.75fr_1.25fr] md:items-center lg:gap-16">
-        <div className="relative flex aspect-[4/5] max-h-[34rem] items-center justify-center overflow-hidden p-6 sm:p-10">
+      <Reveal>
+        <Container className="grid gap-10 md:grid-cols-[.75fr_1.25fr] md:items-center lg:gap-16">
+        <div className="relative mx-auto flex aspect-square w-full max-w-sm items-center justify-center overflow-hidden p-6 sm:p-10">
           <Image src="/brand/logo-mark-01.png" alt="" width={900} height={900} className="h-auto w-[72%]" />
         </div>
         <div>
@@ -26,7 +28,8 @@ export default function FounderPreview() {
             ))}
           </dl>
         </div>
-      </Container>
+        </Container>
+      </Reveal>
     </section>
   );
 }

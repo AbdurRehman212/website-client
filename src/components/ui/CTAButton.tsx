@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ReactNode } from "react";
 
 const base =
-  "inline-flex items-center gap-2 rounded-sm px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep";
+  "group inline-flex items-center gap-2 rounded-sm px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] transition-colors active:translate-y-px focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep";
 
 const variants = {
   primary: "bg-gold text-navy hover:bg-gold-light",
@@ -24,7 +24,7 @@ export default function CTAButton({
   return (
     <Link href={href} className={`${base} ${variants[variant]} ${className}`}>
       {children}
-      <span aria-hidden="true">&rarr;</span>
+      <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
     </Link>
   );
 }

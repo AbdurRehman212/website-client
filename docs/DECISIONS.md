@@ -14,4 +14,6 @@
 
 **Logo integration.** The supplied PNGs already have transparent pixels. The visible rectangular feeling came from surrounding panels, so the header lockup was enlarged, the hero mark moved into a minimal circular contrast field for navy legibility, and founder marks now sit directly on ivory without white boxes.
 
+**Graphic polish.** Service overview cards use Lucide React's consistent 1.5px outline icons. The official Simple Icons WhatsApp path is kept local in `icons.tsx` and rendered in the existing gold accent. No icons were added to every detail bullet, and no continuous animation or new motion library was introduced.
+
 **Security patch.** Next.js and `eslint-config-next` moved from 16.3.3 to 16.3.5 within the same stable release line so production dependencies resolve the patched image library.

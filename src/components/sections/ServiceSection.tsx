@@ -20,7 +20,6 @@ export default function ServiceSection({ service }: { service: ServiceContent })
         </div>
 
         <div className="relative overflow-hidden border-l-2 border-gold bg-navy/[0.035] p-7 sm:p-9">
-          <div aria-hidden="true" className="pointer-events-none absolute right-0 top-0 h-28 w-28 rounded-bl-full border-b border-l border-gold/25" />
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-gold-deep">Scope of support</p>
           <h3 className="mt-2 font-display text-2xl text-navy">What we can help with</h3>
           <ul className="mt-7 grid gap-x-8 gap-y-0 text-sm text-ink sm:grid-cols-2">

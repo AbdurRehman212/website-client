@@ -11,6 +11,7 @@ export default function Hero() {
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
             {hero.eyebrow}
           </span>
+          <span aria-hidden="true" className="hero-rule h-px w-12 bg-gold/80" />
           <h1 className="font-display text-[clamp(2.7rem,5.2vw,4.6rem)] leading-[1.04] tracking-[-0.025em] text-ivory">
             {hero.headingLines[0]}
             <br />
@@ -24,12 +25,12 @@ export default function Hero() {
 
         <div className="relative mx-auto flex aspect-square w-full max-w-sm items-center justify-center md:max-w-md md:justify-self-end">
           <span aria-hidden="true" className="absolute inset-[8%] rounded-full bg-ivory" />
-          <span aria-hidden="true" className="pointer-events-none absolute inset-[12%] rounded-full border border-gold/40" />
           <Image
             src="/brand/logo-mark-02.png"
             alt=""
             width={900}
             height={900}
+            priority
             className="relative h-auto w-3/5"
           />
         </div>

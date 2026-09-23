@@ -4,6 +4,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { company, seo } from "@/content/site";
 import { organizationSchema } from "@/lib/organization-schema";
+import PageTransition from "@/components/ui/PageTransition";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -51,7 +52,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema()) }}
         />
         <Header />
-        <main id="main-content" tabIndex={-1} className="flex-1">{children}</main>
+        <main id="main-content" tabIndex={-1} className="flex-1"><PageTransition>{children}</PageTransition></main>
         <Footer />
       </body>
     </html>

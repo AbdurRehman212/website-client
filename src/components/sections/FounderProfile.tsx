@@ -7,7 +7,7 @@ export default function FounderProfile() {
     <section className="bg-ivory py-16 sm:py-24">
       <Container className="grid gap-10 md:grid-cols-[.72fr_1.28fr] md:items-start lg:gap-16">
         <div className="md:sticky md:top-28">
-          <div className="flex aspect-[4/5] items-center justify-center p-6 sm:p-10">
+          <div className="mx-auto flex aspect-square w-full max-w-sm items-center justify-center p-6 sm:p-10">
             <Image src="/brand/logo-mark-01.png" alt="" width={900} height={900} className="h-auto w-[72%]" />
           </div>
           <dl className="grid grid-cols-2 border-y border-navy/10">
