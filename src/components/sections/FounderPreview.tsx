@@ -1,17 +1,15 @@
-import Image from "next/image";
 import Container from "@/components/ui/Container";
 import CTAButton from "@/components/ui/CTAButton";
 import { credibility, founder } from "@/content/site";
 import Reveal from "@/components/ui/Reveal";
+import FounderPortrait from "./FounderPortrait";
 
 export default function FounderPreview() {
   return (
     <section className="bg-ivory py-16 sm:py-24">
       <Reveal>
         <Container className="grid gap-10 md:grid-cols-[.75fr_1.25fr] md:items-center lg:gap-16">
-        <div className="relative mx-auto flex aspect-square w-full max-w-sm items-center justify-center overflow-hidden p-6 sm:p-10">
-          <Image src="/brand/logo-mark-01.png" alt="" width={900} height={900} className="h-auto w-[72%]" />
-        </div>
+        <FounderPortrait />
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-gold-deep">Founder led expertise</p>
           <h2 className="mt-4 font-display text-4xl text-navy sm:text-5xl">{founder.name}</h2>

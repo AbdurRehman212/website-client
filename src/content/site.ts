@@ -111,7 +111,7 @@ export const founder = {
     "Her approach is practical and personal. She takes time to understand how a business works, where its finance function needs support and what will create lasting value.",
     "As a woman and mother building a professional practice, Yusra is also committed to accessible guidance and meaningful opportunities for women, including women-led businesses, mothers and single mothers.",
   ],
-  photo: null as string | null,
+  photo: "/brand/founder-yusra-ayaz.webp",
 };
 
 export const credibility = [

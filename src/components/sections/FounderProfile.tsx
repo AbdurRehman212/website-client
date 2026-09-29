@@ -1,15 +1,13 @@
-import Image from "next/image";
 import Container from "@/components/ui/Container";
 import { founder, founderExperience } from "@/content/site";
+import FounderPortrait from "./FounderPortrait";
 
 export default function FounderProfile() {
   return (
     <section className="bg-ivory py-16 sm:py-24">
       <Container className="grid gap-10 md:grid-cols-[.72fr_1.28fr] md:items-start lg:gap-16">
         <div className="md:sticky md:top-28">
-          <div className="mx-auto flex aspect-square w-full max-w-sm items-center justify-center p-6 sm:p-10">
-            <Image src="/brand/logo-mark-01.png" alt="" width={900} height={900} className="h-auto w-[72%]" />
-          </div>
+          <FounderPortrait eager />
           <dl className="grid grid-cols-2 border-y border-navy/10">
             <div className="p-5">
               <dt className="text-xs text-muted">Experience</dt>

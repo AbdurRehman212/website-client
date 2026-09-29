@@ -38,8 +38,8 @@ was verified against. Anything not in either is unconfirmed and stays
 `null`/omitted, never filled with plausible-sounding text. The supplied
 reference image (`references/website-reference.jpeg`) is a *layout/visual*
 reference only — its example content (names, timelines, city lists) was
-never real and must never resurface. No founder photograph, ever; use the
-brand mark (`public/brand/`) in its place. No dash characters (em dash, en
+never real and must never resurface. Use the client supplied founder portrait
+only in the Founder sections. No dash characters (em dash, en
 dash, double hyphen, or plain hyphen) in visible marketing copy — restate
 with commas, periods, or colons instead.
 
